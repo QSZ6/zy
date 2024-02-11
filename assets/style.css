@@ -22,9 +22,6 @@
 	border-radius: 16px
 }
 
-body {
-	background-color: lightsteelblue;
-}
 
  .logo {
 	position: absolute;
@@ -80,11 +77,11 @@ body {
 
 
 .desc {
-    width: 100%
-	padding: 0 12px;
+	width: 100% padding: 0 12px;
 	font-size: 14px;
 	text-align: center;
-	color: #aaa;
+	color: lightsteelblue;
+	
 	line-height: 20px;
 	margin-top: 4px
 }
