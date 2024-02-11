@@ -1,14 +1,8 @@
 
-
-
-
-
-
 .header {
 	width: 100%;
 	padding: 20px;
 }
-
 
 
 .banner {
@@ -26,6 +20,10 @@
 	background-position: 50%;
 	padding: 20px;
 	border-radius: 16px
+}
+
+body {
+	background-color: gray;
 }
 
  .logo {
