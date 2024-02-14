@@ -92,10 +92,33 @@
                         <p class="desc rainbow-text">
                             又是一天...
                         </p>
-                        <video id="myVideo" src="img/1.mp4" width="450px" height="350px" controls></video>
+                        <video id="myVideo" src="img/1.mp4" controls></video>
                         <br><hr><br>
                     </div>
                 </div>
+
+                <style>
+                    #myVideo {
+                        max-width: 100%;
+                        height: auto;
+                    }
+
+                    @media screen and (max-width: 600px) {
+                        #myVideo {
+                            width: 100%;
+                            height: auto;
+                            max-height: 200px;
+                        }
+                    }
+
+                    @media screen and (min-width: 601px) and (max-width: 800px) {
+                        #myVideo {
+                            width: 100%;
+                            height: auto;
+                            max-height: 300px;
+                        }
+                    }
+                </style>
 
                 <script>
                     var myVideo = document.getElementById("myVideo");
