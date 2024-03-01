@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜拳PK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #333;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .player, .computer {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #score {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        #play-again {
+            display: none;
+            margin-top: 20px;
+        }
+
+            #play-again button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+    </style>
+</head>
+
+<body>
+    <h1>猜拳PK</h1>
+    <div class="choices">
+        <div class="player" onclick="playGame('石头')">✊</div>
+        <div class="player" onclick="playGame('剪刀')">✌️</div>
+        <div class="player" onclick="playGame('布')">✋</div>
+    </div>
+    <div class="choices">
+        <div class="computer">?</div>
+    </div>
+    <p id="result"></p>
+    <p id="score">积分: 0</p>
+    <div id="play-again">
+        <button onclick="resetGame()">再玩一次</button>
+    </div>
+
+    <script>
+        var score = 0;
+
+        function playGame(playerChoice) {
+            var choices = ['石头', '剪刀', '布'];
+            var computerChoice = choices[Math.floor(Math.random() * 3)];
+
+            // 更新玩家选择
+            var playerDivs = document.querySelectorAll('.player');
+            for (var i = 0; i < playerDivs.length; i++) {
+                playerDivs[i].style.pointerEvents = 'none';
+            }
+
+            // 展示计算机选择
+            var computerDiv = document.querySelector('.computer');
+            computerDiv.innerText = '...';
+
+            setTimeout(function () {
+                computerDiv.innerText = computerChoice;
+
+                var result = '';
+                if (playerChoice === computerChoice) {
+                    result = '平局！';
+                } else if (
+                    (playerChoice === '石头' && computerChoice === '剪刀') ||
+                    (playerChoice === '剪刀' && computerChoice === '布') ||
+                    (playerChoice === '布' && computerChoice === '石头')
+                ) {
+                    result = '你赢了！';
+                    score += 1; // 增加积分
+                } else {
+                    result = '计算机赢了！';
+                    score -= 1; // 扣除积分
+                }
+
+                document.getElementById('result').innerText = `你选择了：${playerChoice}，计算机选择了：${computerChoice}。${result}`;
+                document.getElementById('score').innerText = `积分: ${score}`; // 更新显示积分
+                document.getElementById('play-again').style.display = 'block';
+            }, 1000);
+        }
+
+        function resetGame() {
+            var playerDivs = document.querySelectorAll('.player');
+            for (var i = 0; i < playerDivs.length; i++) {
+                playerDivs[i].style.pointerEvents = 'auto';
+            }
+            document.querySelector('.computer').innerText = '?';
+            document.getElementById('result').innerText = '';
+            document.getElementById('play-again').style.display = 'none';
+        }
+    </script>
+    <br>
+    <footer>
+        <p>2024 | QSZ</p>
+    </footer>
+
+</body>
+
+</html>

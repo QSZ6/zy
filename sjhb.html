@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手机在线画板</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            border: 2px solid #333;
+            margin-top: 20px;
+            cursor: crosshair;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        input {
+            margin-top: 20px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <button id="exportBtn" onclick="exportCanvas()">导出</button>
+    <button id="undoBtn" onclick="undoStroke()">撤销</button>
+    <button id="redoBtn" onclick="redoStroke()">重做</button>
+    <button id="clearBtn" onclick="clearCanvas()">清空</button>
+    <input type="color" id="colorPicker" value="#000000">
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let isPainting = false;
+        let lastX, lastY;
+        const strokes = [];
+        let currentStrokeIndex = -1;
+
+        resizeCanvas();
+
+        window.addEventListener('resize', resizeCanvas);
+
+        // 替换鼠标事件为触摸事件
+        canvas.addEventListener('touchstart', startPaint);
+        canvas.addEventListener('touchmove', paint);
+        canvas.addEventListener('touchend', endPaint);
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth * 0.8;
+            canvas.height = window.innerHeight * 0.6;
+        }
+
+        function startPaint(e) {
+            // 修改获取触摸点的方法
+            isPainting = true;
+            lastX = e.touches[0].clientX - canvas.offsetLeft;
+            lastY = e.touches[0].clientY - canvas.offsetTop;
+            ctx.strokeStyle = document.getElementById('colorPicker').value;
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+        }
+
+        function paint(e) {
+            if (isPainting) {
+                // 修改获取触摸点的方法
+                ctx.lineTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
+                ctx.stroke();
+                lastX = e.touches[0].clientX - canvas.offsetLeft;
+                lastY = e.touches[0].clientY - canvas.offsetTop;
+            }
+        }
+
+        function endPaint() {
+            if (isPainting) {
+                isPainting = false;
+                ctx.closePath();
+                strokes.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+                currentStrokeIndex = strokes.length - 1;
+            }
+        }
+
+        function exportCanvas() {
+            const dataUrl = canvas.toDataURL();
+            const a = document.createElement('a');
+            a.href = dataUrl;
+            a.download = 'my_drawing.png';
+            a.click();
+        }
+
+        function undoStroke() {
+            if (currentStrokeIndex >= 0) {
+                currentStrokeIndex--;
+                redrawCanvas();
+            }
+        }
+
+        function redoStroke() {
+            if (currentStrokeIndex < strokes.length - 1) {
+                currentStrokeIndex++;
+                redrawCanvas();
+            }
+        }
+
+        function clearCanvas() {
+            strokes.length = 0;
+            currentStrokeIndex = -1;
+            redrawCanvas();
+        }
+
+        function redrawCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            strokes.slice(0, currentStrokeIndex + 1).forEach(function (stroke) {
+                ctx.putImageData(stroke, 0, 0);
+            });
+        }
+    </script>
+</body>
+
+</html>
