@@ -1,229 +1,198 @@
-﻿<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-title" content="QSZ">
-    <meta itemprop="name" content="QSZ">
-    <meta name="apple-mobile-web-app-title" content="QSZ">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta name="author" content="QSZ">
-    <meta name="keywords" content="QSZ">
-    <meta name="description" content="QSZ">
-    <link rel="stylesheet" href="css/style.css">
-    <title>欢迎来到QSZ的个人网站</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
+    <title>QSZ</title>
+    <meta name="description" content="期待与更多的人相遇！">
+    <link rel="apple-touch-icon-precomposed" href="images/avatar.bab2b7d4.jpeg">
+    <link rel="stylesheet" type="text/css" href="css/h.9c69ed6c.css">
+    <link rel="stylesheet" type="text/css" href="css/nekotora.99cf6f8c.css">
 </head>
 
 <body>
-    <div id="bg">
-        <div class="backstretch"></div>
+    <style>
+        .toast-bottom-center {
+            position: absolute;
+            left: 30px;
+            right: 10px;
+            top: 20px;
+        }
+    </style>
+
+    <div class="background fixed">
+        <canvas id="startrack" width="1086" height="999"></canvas>
+        <div class="cover"></div>
     </div>
-    <div class="container">
-
-
-
-        <div class="page">
-            <div class="content">
-                <div class="header">
-                    <img src="https://q1.qlogo.cn/g?b=qq&amp;nk=1441937669&amp;s=4" alt="">
+    <div class="main">
+        <div class="ch intro">
+            <div class="container">
+                <div class="hello">
+                    <h1>平凡的日常正奇迹的发生着</h1>
+                    <h2>
+                        <div class="circle">
+                            <span></span> <span></span>
+                            <span></span>
+                        </div>QSZ个人网站
+                    </h2>
                 </div>
-                <style>
-                    .desc {
-                        background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-                        background-size: 200%;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        animation: rainbow 5s linear infinite;
-                    }
-
-                    @keyframes rainbow {
-                        0% {
-                            background-position-x: 0%;
-                        }
-
-                        100% {
-                            background-position-x: 200%;
-                        }
-                    }
-                </style>
-
-                <div class="quote">
-
-                    <strong>QSZ</strong>
-                    <span>
-                        <p class="desc rainbow-text" onclick="showMessage()">黑眸丶王子般高贵</p>
-                    </span>
-
-                    <script>
-                        function showMessage() {
-                            alert("高贵，我也这么觉得！");
-                        }
-                    </script>
-
-                </div>
-
-       
-
-
-
-                <div class="segment" style="border-color: rgb(245, 150, 170); display: block;" id="index">
-                    <div class="label" style="color: lightblue;">
-                        <span>我的网站-页面</span>
-                    </div>
-                    <div class="markdown index">
-                        <p style="text-align: center;"><a href="https://qsz6.github.io/qsz" style="color: blue;">我的个人简介</a></p>
-                        <br><hr><br>
-                    </div>
-                </div>
-
-                <div class="segment" style="border-color: rgb(245, 150, 170); display: block;" id="index">
-                    <div class="label" style="color: lightblue;">
-                        <span>我的说说</span>
-                    </div>
-                    <div class="markdown index">
-                        <p style="text-align: center;">
-                        <p style="text-align: center;"><a href="ss/index.html" style="color: blue;">点击查看所有说说</a></p>
-                        </p>
-                        <br><hr><br>
-                    </div>
-                </div>
-
-                <div class="segment" style="border-color: rgb(245, 150, 170); display: block;" id="index">
-                    <div class="label" style="color: lightblue;">
-                        <span>制作人-基本信息</span>
-                    </div>
-                    <div class="markdown index">
-                        <p style="text-align: center;">姓名：QSZ</p>
-                        <script>
-                            function calculateAge() {
-                                var birthDate = new Date("2002-01-25"); // 填入您的出生日期
-                                var currentDate = new Date();
-                                var age = currentDate.getFullYear() - birthDate.getFullYear();
-
-                                // 检查当前日期是否是生日
-                                if (
-                                    currentDate.getMonth() + 1 === birthDate.getMonth() + 1 &&
-                                    currentDate.getDate() === birthDate.getDate()
-                                ) {
-                                    age++; // 如果是生日，增加一岁
-                                    var ageElement = document.getElementById("age");
-                                    ageElement.innerText = "年龄：" + age;
-
-                                    // 显示生日祝福信息
-                                    ageElement.insertAdjacentHTML('beforeend', '<p class="desc rainbow-text"> 祝我生日快乐！</p>');
-                                } else {
-                                    var ageElement = document.getElementById("age");
-                                    ageElement.innerText = "年龄：" + age;
-                                }
-                            }
-
-                            window.onload = function () {
-                                calculateAge();
-                            };
-                        </script>
-                        <p style="text-align: center;" id="age">年龄：22</p>
-                        <p style="text-align: center;">性别：男</p>
-                        <br><hr><br>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
             </div>
         </div>
-
-    </div>
-
-
-    <footer id="footer">
-        <div class="site-info">
-            <br>
-            <p>
-                ©2024丨<a href="https://qsz6.github.io/zy">QSZ</a>
-                <br>
-                QSZ网站已运行：<span id="momk">4天17小时12分11秒</span>
-                <script language="javascript">
-                    function star() {
-                        window.location.href = './websigned.mobileconfig';
-                        setTimeout(function () {
-                            window.location.href = "./udid/embedded2.mobileprovision";
-                        }, 3000);
-                    }
-                    function show_date_time() {
-                        window.setTimeout("show_date_time()", 1000);
-                        BirthDay = new Date("2024/2/10");
-                        today = new Date();
-                        timeold = (today.getTime() - BirthDay.getTime());
-                        sectimeold = timeold / 1000
-                        secondsold = Math.floor(sectimeold);
-                        msPerDay = 24 * 60 * 60 * 1000
-                        e_daysold = timeold / msPerDay
-                        daysold = Math.floor(e_daysold);
-                        e_hrsold = (daysold - e_daysold) * -24;
-                        hrsold = Math.floor(e_hrsold);
-                        e_minsold = (hrsold - e_hrsold) * -60;
-                        minsold = Math.floor((hrsold - e_hrsold) * -60);
-                        seconds = Math.floor((minsold - e_minsold) * -60);
-                        momk.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
-                    }
-                    show_date_time();
-                </script>
-
-                <style>
-                    #momk {
-                        animation: change 10s infinite;
-                        font-weight: 500;
-                    }
-
-                    @keyframes change {
-                        100% {
-                            color: #7fb7be;
-                        }
-
-                        75% {
-                            color: #2a628f;
-                        }
-
-                        50% {
-                            color: #c49799;
-                        }
-
-                        25% {
-                            color: #e5625e;
-                        }
-
-                        0% {
-                            color: #7880b5;
-                        }
-                    }
-                </style>
-            </p>
+        <div class="ch about">
+            <div class="container">
+                <h2 class="chtitle"><span>QSZ-</span>2024</h2>
+                <div class="clear">
+                    <div class="introduct">
+                        <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&amp;nk=1441937669&amp;s=4">
+                        <p> 不要被别人的节奏打乱了</p>
+                        <p style="padding-bottom:1em;">How lucky to meet you!</p>
+                        <p>我们趋行在人生这个亘古的旅行</p>
+                        <p>就是要在坎坷中奔跑，在在挫折里涅槃</p>
+                        <div class="chatbox">
+                            <div class="line loading">
+                                <span></span>
+                                <span></span> <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="skill clear">
+                        <li>
+                            <p>HTML5/CSS3</p>
+                            <div class="progress">
+                                <div style="width:100%;"></div>
+                                <span>制作网站程度的能力</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p>JavaScript/Typescript</p>
+                            <div class="progress">
+                                <div style="width:55%;"></div>
+                                <span>使用现代轮子程度的能力</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p>PHP</p>
+                            <div class="progress">
+                                <div style="width:98%;"></div>
+                                <span>赞美最好的语言程度的能力</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p>数字设计</p>
+                            <div class="progress">
+                                <div style="width:65%;">
+                                </div><span>让自己舒服程度的能力</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p>世界</p>
+                            <div class="progress">
+                                <div style="width:20%;"></div>
+                                <span>观测世界程度的能力</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p>搞事情</p>
+                            <div class="progress">
+                                <div style="width:82%;"></div>
+                                <span>让事情发生程度的能力</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p>魔法</p>
+                            <div class="progress">
+                                <div style="width:12%;"></div>
+                                <span>和普通人相同程度的能力</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p>游戏</p>
+                            <div class="progress">
+                                <div style="width:99%;"></div>
+                                <span>游戏骂化腾的能力</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </footer>
+        <div class="find ch">
+            <div class="container links">
+                <h2 class="chtitle">我的个人<span>展示</span></h2>
+                <div class="clear col-3" <div="">
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=1441937669&site=qq&menu=yes" target="_blank">
+                            <div class="item">
+                                <div class="bg" style="background-color:#28a9e0"></div>
+                                <div class="inner">
+                                    <i class="icon-qq"></i>
+                                    <span>QQ</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="mailto:qsz666@vip.qq.com" target="_blank">
+                            <div class="item">
+                                <div class="bg" style="background-color:#28a9e0"></div>
+                                <div class="inner"> <i class="icon-mail"></i> <span>Mail</span> </div>
+                            </div>
 
-    <script>
-        function about() {
-            document.getElementById("about").style.display = "block";
-            document.getElementById("index").style.display = "none";
-        }
+                            <a href="https://y.music.163.com/m/user?id=619591230" target="_blank">
+                                <div class="item">
+                                    <div class="bg" style="background-color:#f12d35"></div>
+                                    <div class="inner">
+                                        <i class="icon-netease_music"></i>
+                                        <span>网易云音乐</span>
+                                    </div>
+                                </div>
+                            </a>
 
-        function index() {
-            document.getElementById("index").style.display = "block";
-            document.getElementById("about").style.display = "none";
-        }
-    </script>
+                            <a href="https://qsz6.github.io/qsz/" target="_blank">
+                                <div class="item">
+                                    <div class="bg" style="background-color:#28a9e0"></div>
+                                    <div class="inner"> </i> <span>我的简介</span> </div>
+                                </div>
+
+                                <a href="ss/index.html" target="_blank">
+                                    <div class="item">
+                                        <div class="bg" style="background-color:#28a9e0"></div>
+                                        <div class="inner"> <span>我的说说</span> </div>
+                                    </div>
+
+                                    <a href="ewm.html" target="_blank">
+                                        <div class="item">
+                                            <div class="bg" style="background-color:#28a9e0"></div>
+                                            <div class="inner">  <span>我的二维码制作</span> </div>
+                                        </div>
+
+                                        <h2 class="chtitle">友情<span>链接</span></h2>
+                                        <div class="clear col-3" <div ="">
+    <a href="weihu/index.html" target="_blank">
+        <div class="item">
+            <div class="bg" style="background-color:#28a9e0"></div>
+            <div class="inner"> <span>建设中...</span> </div>
+        </div>
+
+
+</div>
+                </div>
+</div>
+            <div class="gate ch">
+                <div class="container links">
+                    <div class="footer ch">
+                        <div class="container">
+                            <h3>只要努力</h3>
+                            <p>就会成功，对吧</p>
+                            <p class="c">2024 | QSZ </a></p>
+                        </div>
+                    </div>
+                    <script src="js/page.3a0791a3.js"></script>
+                    <script type="text/javascript" src="js/stats.js" charset="UTF-8"></script>
 
 
 
-
-
+                </div>
+            </div>
+        </div>
 
 </body>
 </html>

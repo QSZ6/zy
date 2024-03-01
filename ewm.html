@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QSZ二维码制作</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>QSZ二维码制作</h2>
+        <div id="qrcode"></div>
+        <button onclick="updateQRCode()">更新二维码</button>
+        <a id="downloadLink" download="qrcode.png" style="display: none;" href="#">下载二维码</a>
+        <form id="infoForm">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" placeholder="请输入您的姓名">
+            <label for="phone">手机号：</label> <!-- 新增的手机号输入字段 -->
+            <input type="tel" id="phone" name="phone" placeholder="请输入您的手机号"> <!-- 新增的手机号输入字段 -->
+            <label for="email">邮箱：</label>
+            <input type="email" id="email" name="email" placeholder="请输入您的邮箱">
+            <label for="website">网站：</label>
+            <input type="url" id="website" name="website" placeholder="请输入您的网站">
+            <label for="avatar">头像链接：</label>
+            <input type="url" id="avatar" name="avatar" placeholder="请输入您的头像链接">
+            <p>头像链接 ：复制右侧链接（https://q1.qlogo.cn/g?b=qq&nk=填自己的QQ号&s=4）粘贴到头像链接 更新二维码即可。</p>
+            <p>举例 ：https://q1.qlogo.cn/g?b=qq&nk=121212121212121&s=4 </p>
+            <p>温馨提示：输入完成后 点击更新二维码 在下载 - 安卓可用QQ直接扫描 | ios可用相机扫描二维码</p>
+        </form>
+        <footer>
+            <p>2024 | <a href='https://qsz6.github.io/zy/' target='_blank'>制作人</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        var personalInfo = {
+            name: "",
+            email: "",
+            website: "",
+            avatar: "",
+            phone: ""
+        };
+
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: generateVCard(personalInfo),
+            width: 200,
+            height: 200
+        });
+
+        function generateVCard(info) {
+            return `BEGIN:VCARD
+VERSION:3.0
+N:${info.name}
+EMAIL:${info.email}
+TEL:${info.phone}
+URL:${info.website}
+PHOTO;VALUE=URL;TYPE=PNG:${info.avatar}
+END:VCARD`;
+        }
+
+        function updateQRCode() {
+            var form = document.getElementById("infoForm");
+            var updatedInfo = {
+                name: form.elements["name"].value,
+                email: form.elements["email"].value,
+                website: form.elements["website"].value,
+                avatar: form.elements["avatar"].value,
+                phone: form.elements["phone"].value
+            };
+            qrcode.clear();
+            qrcode.makeCode(generateVCard(updatedInfo));
+
+            // Create a data URL for the QR code image and set it as the download link href
+            var qrCodeImage = document.querySelector("#qrcode img");
+            var dataUrl = qrCodeImage.src;
+            var downloadLink = document.getElementById("downloadLink");
+            downloadLink.href = dataUrl;
+            downloadLink.style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>
