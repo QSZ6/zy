@@ -71,7 +71,6 @@
         footer {
             margin-top: 20px;
         }
-
     </style>
 </head>
 
@@ -83,9 +82,9 @@
         <a id="downloadLink" download="qrcode.png" style="display: none;" href="#">下载二维码</a>
         <form id="infoForm">
             <label for="name">姓名：</label>
-            <input type="text" id="name" name="name" placeholder="请输入您的姓名">
-            <label for="phone">手机号：</label> <!-- 新增的手机号输入字段 -->
-            <input type="tel" id="phone" name="phone" placeholder="请输入您的手机号"> <!-- 新增的手机号输入字段 -->
+            <input type="text" id="name" name="name" placeholder="请输入您的英文姓名">
+            <label for="phone">手机号：</label>
+            <input type="tel" id="phone" name="phone" placeholder="请输入您的手机号">
             <label for="email">邮箱：</label>
             <input type="email" id="email" name="email" placeholder="请输入您的邮箱">
             <label for="website">网站：</label>
@@ -93,7 +92,7 @@
             <label for="avatar">头像链接：</label>
             <input type="url" id="avatar" name="avatar" placeholder="请输入您的头像链接">
             <p>头像链接 ：复制右侧链接（https://q1.qlogo.cn/g?b=qq&nk=填自己的QQ号&s=4）粘贴到头像链接 更新二维码即可。</p>
-            <p>举例 ：https://q1.qlogo.cn/g?b=qq&nk=121212121212121&s=4 </p>
+            <p>举例 ：https://q1.qlogo.cn/g?b=qq&nk=121212121212121&s=4</p>
             <p>温馨提示：输入完成后 点击更新二维码 在下载 - 安卓可用QQ直接扫描 | ios可用相机扫描二维码</p>
         </form>
         <footer>
@@ -120,7 +119,7 @@
         function generateVCard(info) {
             return `BEGIN:VCARD
 VERSION:3.0
-N:${info.name}
+N;CHARSET=UTF-8:${encodeURIComponent(info.name)}
 EMAIL:${info.email}
 TEL:${info.phone}
 URL:${info.website}
