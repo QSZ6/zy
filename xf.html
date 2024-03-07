@@ -3,6 +3,44 @@
 <head>  
 <meta charset="utf-8">  
 <title>西远西服产品图册</title>  
+
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="utf-8">  
+<title>西远西服产品图册</title>  
+<style>  
+  /* 你的样式代码 */  
+</style>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<script>  
+window.onload = function() {  
+  var isWeixin = /MicroMessenger/.test(window.navigator.userAgent);  
+  if (isWeixin) {  
+    // 在微信浏览器中显示提示信息  
+    alert('为了获得更好的体验，建议您在外部浏览器中打开此页面。');  
+    // 或者你可以在这里添加自定义的提示逻辑，比如显示一个提示框或按钮  
+  }  
+};  
+</script>  
+</head>  
+<body>  
+  <!-- 提供一个在外部浏览器中打开的链接或按钮 -->  
+  <a href="https://book.yunzhan365.com/blumj/cqut/mobile/index.html" target="_blank" id="externalLink">在外部浏览器中打开</a>  
+  <script>  
+    // 如果是在微信中，给链接添加一个明显的样式，提示用户点击  
+    var externalLink = document.getElementById('externalLink');  
+    if (/MicroMessenger/.test(navigator.userAgent)) {  
+      externalLink.style.backgroundColor = 'yellow'; // 或者其他明显的样式  
+      externalLink.style.padding = '10px';  
+      externalLink.style.display = 'block';  
+      externalLink.style.textAlign = 'center';  
+      externalLink.style.marginTop = '20px';  
+      externalLink.innerHTML = '请点击这里在外部浏览器中打开';  
+    }  
+  </script>  
+    
+  
 <style>  
   body, html {  
     margin: 0;  
@@ -24,4 +62,8 @@
 <body>  
   <iframe src="https://book.yunzhan365.com/blumj/cqut/mobile/index.html"></iframe>  
 </body>  
+</html>
+
+
+
 </html>
