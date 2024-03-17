@@ -103,7 +103,7 @@ button {
     function searchCertificate() {
         const certificateNumber = document.getElementById('searchInput').value;
 
-        if (certificateNumber === "888888") {
+        if (certificateNumber === "GF20240317") {
             const certificateInfo = `已查询到黄静的证书。`;
             document.getElementById('certificateInfo').innerText = certificateInfo;
             document.getElementById('certificateDisplay').style.display = 'block';
@@ -117,7 +117,11 @@ button {
     }
 
     function redirectToIndex2() {
-        window.location.href = 'indexhj.html';
+
+alert("加载中，请耐心等待，页面将会变得更清晰");
+
+// 打开新窗口加载页面
+window.open('indexhj.html', '_blank');
     }
 </script>
 </body>
