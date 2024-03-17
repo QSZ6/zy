@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鸿德人才储备</title>
+<style>
+    /* 样式可以根据需要自行修改 */
+    body 
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+section {
+    padding: 10px;
+}
+
+input[type="text"] {
+    padding: 3px;
+    width: 80%;
+    max-width: 300px;
+    font-size: 0.8em;
+}
+
+button {
+    padding: 3px 7px;
+    font-size: 0.8em;
+}
+
+.certificate {
+    border: 1px solid #333;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+        width: 200px;
+    }
+
+    button {
+        padding: 5px 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .certificate {
+        border: 1px solid #333;
+        padding: 20px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>鸿德人才<br>储备查询</h1>
+</header>
+<section>
+    <h2>搜索证书</h2>
+    <input type="text" id="searchInput" placeholder="输入证书编号">
+    <br>
+    <button onclick="searchCertificate()">搜索</button>
+
+    <div class="certificate" id="certificateDisplay" style="display: none;">
+        <h2>证书详情</h2>
+        <p id="certificateInfo"></p>
+        <button id="redirectButton" style="display: none;" onclick="redirectToIndex2()">查看</button>
+    </div>
+</section>
+
+<script>
+    function searchCertificate() {
+        const certificateNumber = document.getElementById('searchInput').value;
+
+        if (certificateNumber === "888888") {
+            const certificateInfo = `已查询到黄静的证书。`;
+            document.getElementById('certificateInfo').innerText = certificateInfo;
+            document.getElementById('certificateDisplay').style.display = 'block';
+            document.getElementById('redirectButton').style.display = 'block';
+        } else {
+            const certificateInfo = `未查询到证书内容，请输入正确的证书编号。`;
+            document.getElementById('certificateInfo').innerText = certificateInfo;
+            document.getElementById('certificateDisplay').style.display = 'block';
+            document.getElementById('redirectButton').style.display = 'none';
+        }
+    }
+
+    function redirectToIndex2() {
+        window.location.href = 'indexhj.html';
+    }
+</script>
+</body>
+</html>
