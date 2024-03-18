@@ -59,7 +59,10 @@
             width: 80%;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
         }
-
+a {
+    color: white;
+    text-decoration: none; /* 可选：去掉下划线 */
+}
         footer {
             position: fixed;
             left: 0;
@@ -89,7 +92,7 @@
     </div>
 </section>
 <footer>
-    <p>&copy; 2024 鸿德人才储备官网</p>
+<p>&copy; 2024 鸿德人才储备官网 | <a href="xz.html">申请证书</a></p>
 </footer>
 <script>
     function searchCertificate() {
@@ -148,8 +151,7 @@
         }
 
         alert("确认后，请耐心等待，页面将会变得更清晰");
-        // 使用 window.open 在新窗口中打开对应的图片页面
-        window.open(imageName, '_blank');
+        const newWindow = window.open(imageName, '_blank');
     }
 </script>
 </body>
