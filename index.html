@@ -1,130 +1,116 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
-    <title>欢迎来到QSZ个人网站</title>
-    <meta name="description" content="期待与更多的人相遇！">
-    <link rel="apple-touch-icon-precomposed" href="images/avatar.bab2b7d4.jpeg">
-    <link rel="stylesheet" type="text/css" href="css/h.9c69ed6c.css">
-    <link rel="stylesheet" type="text/css" href="css/nekotora.99cf6f8c.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>屈思政个人网站</title>
+    <style>
+        body {
+ background-color: #000;
+    background-image: url('https://img.soogif.com/0IQdIE28UmlM7MBZE4MEKzck3hwLxrog.gif');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+        }
+
+        header {
+    color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+        .content-list {
+            margin: 20px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .content-list li {
+            margin-bottom: 10px;
+        }
+
+        .content-list a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #33cccc;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .content-list a:hover {
+            background-color: #66cccc;
+        }
+
+        .author {
+            color: #666;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.5); /* 50% 透明度的黑色 */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
 </head>
 
 <body>
-    <style>
-        footer {
-            color: white;
-            font-size: 1.2em;
-        }
 
-        .toast-bottom-center {
-            position: absolute;
-            left: 30px;
-            right: 10px;
-            top: 20px;
-        }
-    </style>
+<header>
+    <h1>欢迎访问屈思政个人网站</h1>
+    <p>天下苍生望霖雨</p>
+ <p>不知龙在此中蟠</p>
 
-    <div class="background fixed">
-        <canvas id="startrack" width="1086" height="999"></canvas>
-        <div class="cover"></div>
+</header>
+
+    <div class="container">
+        <ul class="content-list">
+            <li><a href="https://qsz6.github.io/qsz/" target="_blank">查看简介</a></li>
+            <li><a href="https://qsz6.github.io/zy/ss/" target="_blank">查看说说</a></li>
+            <li><a href="https://music.163.com/#/user?id=619591230" target="_blank">我网易云</a></li>
+        </ul>
+        <div class="author">—— 屈思政</div>
     </div>
-    <div class="main">
-        <div class="ch intro">
-            <div class="container">
-                <div class="hello">
-                    <h1>天下苍生望霖雨<br>不知龙在此中蟠</h1>
-                    <h2>
-                        <div class="circle">
-                            <span></span> <span></span>
-                            <span></span>
-                        </div>欢迎来到QSZ的专属个人网站！
-                    </h2>
-                </div>
-            </div>
-        </div>
+    <footer>
+        <p>© 2024 屈思政个人网站 | <a href="mailto:972560507@qq.com">联系邮箱</a></p>
+    </footer>
 
-        <div class="ch about">
-            <div class="container">
-                <h2 class="chtitle"><span>QSZ-</span>专属个人网站</h2>
-                <div class="clear">
-                    <div class="introduct">
-                        <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&amp;nk=1441937669&amp;s=4">
-                        <p> 个性签名：敢问上天，是否有仙？</p>
-                        <div class="chatbox">
-                            <div class="line loading">
-                                <span></span>
-                                <span></span> <span></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="find ch">
-                        <div class="container links">
-                            <h2 class="chtitle">我的内容<span>展示</span></h2>
-                            <div class="clear col-3">
-                                <a href="http://wpa.qq.com/msgrd?v=3&uin=1441937669&site=qq&menu=yes" target="_blank">
-                                    <div class="item">
-                                        <div class="bg" style="background-color:#28a9e0"></div>
-                                        <div class="inner">
-                                            <i class="icon-qq"></i>
-                                            <span>QQ</span>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="mailto:qsz666@vip.qq.com" target="_blank">
-                                    <div class="item">
-                                        <div class="bg" style="background-color:#28a9e0"></div>
-                                        <div class="inner"> <i class="icon-mail"></i> <span>Mail</span> </div>
-                                    </div>
-                                </a>
-                                <a href="https://y.music.163.com/m/user?id=619591230" target="_blank">
-                                    <div class="item">
-                                        <div class="bg" style="background-color:#f12d35"></div>
-                                        <div class="inner">
-                                            <i class="icon-netease_music"></i>
-                                            <span>网易云音乐</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-<style>
-  .footer {
-    text-align: center;
-    font-size: 18px;
-    background-color: #f0f0f0;
-    padding: 18px;
-  }
-</style>
-
-                <div class="main">
-                    <div class="ch intro">
-                        <div class="container">
-                            <div class="hello">
-                                <h1>
-                                    <p>山重水复疑无路<br>柳暗花明又一村</p>
-
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-
-
-  <div class="main">
-      <div class="ch intro">
-         <div class="container">
-            <div class="hello">
-               <h1>
-<h2 style="text-align: center;">2024-QSZ个人网站</h2>
-   </div>
-
-
-        <script src="js/page.3a0791a3.js"></script>
-        <script type="text/javascript" src="js/stats.js" charset="UTF-8"></script>
 </body>
+
 </html>
