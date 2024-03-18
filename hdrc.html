@@ -1,86 +1,76 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>鸿德人才储备</title>
-<style>
-    /* 样式可以根据需要自行修改 */
-    body 
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>鸿德人才储备验证官网</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            background-color: #f2f2f2;
+        }
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 1.5em;
-}
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.5em;
+        }
 
-section {
-    padding: 10px;
-}
+        section {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-input[type="text"] {
-    padding: 3px;
-    width: 80%;
-    max-width: 300px;
-    font-size: 0.8em;
-}
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 300px;
+            font-size: 0.8em;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-button {
-    padding: 3px 7px;
-    font-size: 0.8em;
-}
+        button {
+            padding: 10px 20px;
+            font-size: 0.8em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.certificate {
-    border: 1px solid #333;
-    padding: 15px;
-    margin-top: 10px;
-    font-size: 0.9em;
-}
+        .certificate {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            background-color: #fff;
+            border-radius: 5px;
+            max-width: 400px;
+            width: 80%;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
 
-{
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-
-    header {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-    input[type="text"] {
-        padding: 5px;
-        width: 200px;
-    }
-
-    button {
-        padding: 5px 10px;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
-
-    .certificate {
-        border: 1px solid #333;
-        padding: 20px;
-        margin-top: 10px;
-    }
-</style>
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -95,7 +85,7 @@ button {
     <div class="certificate" id="certificateDisplay" style="display: none;">
         <h2>证书详情</h2>
         <p id="certificateInfo"></p>
-        <button id="redirectButton" style="display: none;" onclick="redirectToIndex2()">查看</button>
+        <button id="redirectButton" style="display: none;" onclick="redirectToImage()">查看证书</button>
     </div>
 </section>
 <footer>
@@ -104,26 +94,62 @@ button {
 <script>
     function searchCertificate() {
         const certificateNumber = document.getElementById('searchInput').value;
+        const certificateInfoElement = document.getElementById('certificateInfo');
+        const certificateDisplayElement = document.getElementById('certificateDisplay');
+        const redirectButtonElement = document.getElementById('redirectButton');
 
-        if (certificateNumber === "GF20240317") {
-            const certificateInfo = `已查询到黄静的证书。`;
-            document.getElementById('certificateInfo').innerText = certificateInfo;
-            document.getElementById('certificateDisplay').style.display = 'block';
-            document.getElementById('redirectButton').style.display = 'block';
-        } else {
-            const certificateInfo = `未查询到证书内容，请输入正确的证书编号。`;
-            document.getElementById('certificateInfo').innerText = certificateInfo;
-            document.getElementById('certificateDisplay').style.display = 'block';
-            document.getElementById('redirectButton').style.display = 'none';
+        switch (certificateNumber) {
+            case "HDY20240318":
+                certificateInfoElement.innerText = "已查询到何东洋的证书。";
+                break;
+            case "SY20240318":
+                certificateInfoElement.innerText = "已查询到孙彦的证书。";
+                break;
+            case "YZM20240318":
+                certificateInfoElement.innerText = "已查询到闫哲明的证书。";
+                break;
+            case "888888":
+                certificateInfoElement.innerText = "已查询到屈思政的证书。";
+                break;
+            case "GF20240317":
+                certificateInfoElement.innerText = "已查询到黄静的证书。";
+                break;
+            default:
+                certificateInfoElement.innerText = "未查询到证书内容，请输入正确的证书编号。";
+                break;
         }
+
+        certificateDisplayElement.style.display = 'block';
+        redirectButtonElement.style.display = 'block';
     }
 
-    function redirectToIndex2() {
+    function redirectToImage() {
+        const certificateNumber = document.getElementById('searchInput').value;
+        let imageName;
 
-alert("确认后，请耐心等待，页面将会变得更清晰");
+        switch (certificateNumber) {
+            case "HDY20240318":
+                imageName = "hdy.jpg";
+                break;
+            case "SY20240318":
+                imageName = "sy.jpg";
+                break;
+            case "YZM20240318":
+                imageName = "yzm.jpg";
+                break;
+            case "888888":
+                imageName = "qsz.jpg";
+                break;
+            case "GF20240317":
+                imageName = "hj.jpg";
+                break;
+            default:
+                return;
+        }
 
-// 打开新窗口加载页面
-window.open('indexhj.html', '_blank');
+        alert("确认后，请耐心等待，页面将会变得更清晰");
+        // 使用 window.open 在新窗口中打开对应的图片页面
+        window.open(imageName, '_blank');
     }
 </script>
 </body>
