@@ -39,62 +39,90 @@
             a:hover {
                 text-decoration: none;
             }
+
+        /* 滚动条样式 */
+        .scrollbar {
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.1);
+            max-height: 300px; /* 设置最大高度 */
+        }
+
+            .scrollbar::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .scrollbar::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 4px;
+            }
+
+            .scrollbar::-webkit-scrollbar-track {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+
+        /* 页脚样式 */
+        footer {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
-    <br> <br> 
-                   <div class="container">
-                       <img src="./tp/qsz.png" alt="Logo" class="logo">
-                       <br> <br> <br> 
-                                                     <section class="profile info-unit">
-                                                         <h2>个性签名<label style="color: #ff0000;">HELLO</label></h2>
-                                                         <hr>
-                                                         <ul>
-                                                                 
-                                                                                      </ul>
-                                                     </section>
+    <div class="container">
+        <header>
+            <img src="./tp/qsz.png" alt="Logo" class="logo">
+            <section class="section">
+                <h2>个性签名<label style="color: #ff0000;">HELLO</label></h2>
+                <hr>
+                <!-- 此处可以添加个性签名内容 -->
+            </section>
+        </header>
 
-                       <div class="section">
-                           <h2>个人作品区域</h2>
-                           <ul>
-                               <li>在线钢琴【电脑版】- <a href="./gq/index.html" target="_blank">查看</a></li>
-                               <li>待更新</li>
-                               <li>待更新</li>
-                           </ul>
-                       </div>
+        <div class="section scrollbar">
+            <h2>展示区域</h2>
+            <ul>
+                <h2>个人作品区域</h2>
+                <li>在线钢琴【电脑版】- <a href="./gq/index.html" target="_blank">查看</a></li>
+                <li>待更新</li>
+                <li>待更新</li>
 
-                       <div class="section">
-                           <h2>个人网站区域</h2>
-                           <ul>
-                               <li>个人简介 - <a href="https://qsz6.github.io/qsz/" target="_blank">查看</a></li>
-                               <li>屈思政的网易云 - <a href="https://music.163.com/#/user?id=619591230" target="_blank">查看</a></li>
-                           </ul>
-                       </div>
+                <h2>个人网站区域</h2>
+                <li>个人简介 - <a href="https://qsz6.github.io/qsz/" target="_blank">查看</a></li>
+                <li>屈思政的网易云 - <a href="https://music.163.com/#/user?id=619591230" target="_blank">查看</a></li>
+                <li>待更新</li>
+                <li>待更新</li>
+                <li>待更新</li>
+                <li>待更新</li>
 
-                       <div class="section">
-                           <p><span id="running-time"></span></p>
-                       </div>
+            </ul>
+        </div>
 
-                       <script>
-                           var startDate = new Date("2024-02-09");
-                           var timeDisplay = document.getElementById("running-time");
+    </div>
 
-                           setInterval(function () {
-                               var currentDate = new Date();
-                               var diff = currentDate - startDate;
-                               var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                               var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                               var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                               var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    <footer>
+        <p id="running-time"></p>
+        <p>Copyright 2024 Qu Sizheng.</p>
+    </footer>
 
-                               timeDisplay.textContent = "网站已运行：" + days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
-                           }, 1000); // 每秒更新一次
-                       </script>
-                       <br> <br>
-                       <div class="section">
-                           <h4>Copyright 2024 Qu Sizheng.</h4>
-                       </div>
-                   </div>
+    <script>
+        var startDate = new Date("2024-02-09");
+        var timeDisplay = document.getElementById("running-time");
 
+        setInterval(function () {
+            var currentDate = new Date();
+            var diff = currentDate - startDate;
+            var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            timeDisplay.textContent = "网站已运行：" + days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
+        }, 1000); // 每秒更新一次
+    </script>
 </body>
 </html>
