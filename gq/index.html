@@ -16,33 +16,5 @@
 <script type="text/javascript" src="static/js/manifest.1a7f612c7ba031958958.js"></script>
 <script type="text/javascript" src="static/js/vendor.d9a8a3e67a2e29a049b4.js"></script>
 <script type="text/javascript" src="static/js/app.7e44b3de77b6cf019159.js"></script>
-<script>
-setInterval(function() {
-    var menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach(function(item) {
-        if (item.textContent === '更换壁纸') {
-            item.style.display = 'none';
-            // 找到menu的父级并隐藏
-            item.closest('.menu').style.display = 'none';
-        }
-    });
-
-    var authorInfo = document.querySelector('.author-info');
-    if (authorInfo) {
-        authorInfo.style.display = 'none';
-    }
-
-    var tradeMark = document.querySelector('.trade-mark');
-    if (tradeMark) {
-        tradeMark.innerHTML = '<a target="_blank" href="http://qsz6.github.io/zy/" class="trade-mark"><i class="icon-piano"></i> <h1 class="trade-mark-txt">钢琴<span class="trade-mark-txt--en">在线演奏</span></h1></a>';
-    }
-
-    var footerItem = document.querySelector('.footer-item');
-    if (footerItem) {
-        footerItem.innerHTML = '<a target="_blank" href="https://qsz6.github.io/zy/"><span style="font-weight: bold;">Qu Sizheng.</span> Copyright 2024 </a>';
-        footerItem.style.textAlign = 'center'; // 居中
-    }
-}, 500); // 每500毫秒执行一次操作
-</script>
 </body>
 </html>
