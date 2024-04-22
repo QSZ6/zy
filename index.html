@@ -21,11 +21,7 @@
             padding: 20px;
         }
 
-        .logo {
-            width: 175px;
-            height: 60px;
-            margin-top: 20px;
-        }
+
 
         .section {
             margin-top: 20px;
@@ -36,9 +32,9 @@
             text-decoration: underline;
         }
 
-            a:hover {
-                text-decoration: none;
-            }
+        a:hover {
+            text-decoration: none;
+        }
 
         /* 滚动条样式 */
         .scrollbar {
@@ -48,18 +44,18 @@
             max-height: 300px; /* 设置最大高度 */
         }
 
-            .scrollbar::-webkit-scrollbar {
-                width: 8px;
-            }
+        .scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
 
-            .scrollbar::-webkit-scrollbar-thumb {
-                background-color: rgba(255, 255, 255, 0.5);
-                border-radius: 4px;
-            }
+        .scrollbar::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+        }
 
-            .scrollbar::-webkit-scrollbar-track {
-                background-color: rgba(0, 0, 0, 0.1);
-            }
+        .scrollbar::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
 
         /* 页脚样式 */
         footer {
@@ -70,6 +66,23 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* 媒体查询 */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .logo {
+                width: 100px;
+                height: 0px;
+            }
+            .section {
+                margin-top: 100px;
+            }
+            .scrollbar {
+                max-height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -77,30 +90,26 @@
         <header>
             <img src="./tp/qsz.png" alt="Logo" class="logo">
             <section class="section">
-                <h2>个性签名<label style="color: #ff0000;">HELLO</label></h2>
+                <h2>QSZ个人网站</h2>
                 <hr>
+                <h2>签名：<label style="color: #ff0000;">HELLO</label></h2>
                 <!-- 此处可以添加个性签名内容 -->
             </section>
         </header>
 
-        <div class="section scrollbar">
+        <div>
             <h2>关于</h2>
             <ul>
-                <h2>个人网站区域</h2>
+                <h3>个人网站区域</h3>
 
                 <li>网易云主页 - <a href="https://music.163.com/#/user?id=619591230" target="_blank">查看</a></li>
                 <li>个人简介 - <a href="https://qsz6.github.io/qsz/" target="_blank">查看</a></li>
 
-                <h2>个人作品区域</h2>
-                <li>没写...哈哈哈哈</a></li>
-
-                <h2>个人日记</h2>
-                <li>懒，没写...</a></li>
-
+                <h3>个人作品区域</h3>
+              <li>网易云翻弹 - <a href="https://music.163.com/#/djradio?id=1003580293" target="_blank">听一下</a></li>
 
             </ul>
         </div>
-
     </div>
 
     <footer>
@@ -124,4 +133,4 @@
         }, 1000); // 每秒更新一次
     </script>
 </body>
-</html>
+</html> 
