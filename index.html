@@ -1,136 +1,312 @@
-﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>屈思政主页</title>
-    <style>
-        /* 全局样式 */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://p1.a.yximgs.com/upic/2024/04/09/19/BMjAyNDA0MDkxOTM5MDZfMTIxODUwMjY1M18xMjk0MzcwMjc0NzBfMl82_Bb52e792c58db0da290c9c8ae19253379.jpg?clientCacheKey=3xxg73bncs9vvze.jpg&di=2d74985c&bp=10000');
-            background-size: cover;
-            color: white;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-
-
-        .section {
-            margin-top: 20px;
-        }
-
-        a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        a:hover {
-            text-decoration: none;
-        }
-
-        /* 滚动条样式 */
-        .scrollbar {
-            overflow-y: scroll;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.1);
-            max-height: 300px; /* 设置最大高度 */
-        }
-
-        .scrollbar::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .scrollbar::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 4px;
-        }
-
-        .scrollbar::-webkit-scrollbar-track {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        /* 页脚样式 */
-        footer {
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* 媒体查询 */
-        @media only screen and (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-            .logo {
-                width: 100px;
-                height: 0px;
-            }
-            .section {
-                margin-top: 100px;
-            }
-            .scrollbar {
-                max-height: 200px;
-            }
-        }
-    </style>
+    <meta name="description" content="QSZ丨导航  简单实用的个人导航网页，收录几个够用的网站；可以实现多引擎搜索，如百度，谷歌，必应">
+    <meta name="keywords" content="导航,简单实用的导航,多搜索引擎,谷歌,百度,必应,搜索，网盘，电影">
+    <meta name="generator" content="QSZ 丨 2024.05.21">
+    <link rel="stylesheet" href="static/css/semantic.min.css">
+    <link rel="stylesheet" href="static/css/m_dh.style.css">
+    <title>QSZ丨导航</title>
+    <script src="https://hm.baidu.com/hm.js?08782df572e5129fbac8da8687b7b420"></script>
+    <script src="https://hm.baidu.com/hm.js?08782df572e5129fbac8da8687b7b420"></script>
+    <script src="https://www.baidu.com/"></script>
+    <script src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" defer="" src="//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback_929253625616" referrerpolicy="no-referrer-when-downgrade"></script>
+    <script type="text/javascript" defer="" src="//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback_38900917494" referrerpolicy="no-referrer-when-downgrade"></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <img src="./tp/qsz.png" alt="Logo" class="logo">
-            <section class="section">
-                <h2>QSZ个人网站</h2>
-                <hr>
-                <h2>签名：<label style="color: #ff0000;">HELLO</label></h2>
-                <!-- 此处可以添加个性签名内容 -->
-            </section>
-        </header>
+<body id="killie">
+    <!--使用了Semantic-UI进行美化-->
 
-        <div>
-            <h2>关于</h2>
-            <ul>
-                <h3>个人网站区域</h3>
+    <div class="ui inverted menu borderless">
+        <div class="ui container">
+            <span class="header item">
+                <img class="logo" src="static/picture/icon-white.png">
+                QSZ导航
+            </span>
 
-                <li>网易云主页 - <a href="https://music.163.com/#/user?id=619591230" target="_blank">查看</a></li>
-                <li>个人简介 - <a href="https://qsz6.github.io/qsz/" target="_blank">查看</a></li>
-
-                <h3>个人作品区域</h3>
-              <li>网易云翻弹 - <a href="https://music.163.com/#/djradio?id=1003580293" target="_blank">听一下</a></li>
-
-            </ul>
         </div>
     </div>
 
-    <footer>
-        <p id="running-time"></p>
-        <p>Copyright 2024 Qu Sizheng.</p>
-    </footer>
+    <div class="ui main container">
+        <img class="centerlog" src="static/picture/icon-left-font-monochrome-black.png">
+        <div class="ui search">
+            <div class="ui input">
+                <input id="search" name="wd" class="prompt" placeholder="这里可以输入搜索..." type="text" autofocus="autofocus">
+            </div>
+        </div>
+        <div class="ui sbuttons">
+            <button class="ui button" id="google">
+                谷歌
+            </button>
+            <button class="ui button" id="bing">
+                必应
+            </button>
+            <button class="ui button" id="baidu">
+                百度
+            </button>
 
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="ui  two column grid stables ">
+            <div class="column ">
+                <table class="ui definition small table ">
+
+
+                    <tbody>
+                        <tr>
+                            <td align="center">视频</td>
+                            <td align="center"><a href="http://www.bilibili.com/" target="_blank">B站</a></td>
+                            <td align="center"><a href="http://www.youku.com/" target="_blank">优酷</a></td>
+                            <td align="center"><a href="http://www.iqiyi.com/" target="_blank">爱奇艺</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+
+                        </tr>
+                    </tbody>
+
+
+
+                    <tbody>
+                        <tr>
+                            <td align="center">购物</td>
+                            <td align="center"><a href="http://www.jd.com/" target="_blank">京东</a></td>
+                            <td align="center"><a href="https://www.tmall.com/" target="_blank">天猫</a></td>
+                            <td align="center"><a href="https://www.taobao.com/" target="_blank">淘宝</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td align="center">工具</td>
+                            <td align="center"><a href="https://www.12306.cn/" target="_blank">购买火车票</a></td>
+                            <td align="center"><a href="http://www.kuaidi100.com/" target="_blank">快递查询</a></td>
+                            <td align="center"><a href="http://fanyi.youdao.com/" target="_blank">有道翻译</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+
+
+
+
+                    <tbody>
+                        <tr>
+                            <td align="center">邮箱</td>
+                            <td align="center"><a href="https://mail.qq.com/" target="_blank">QQ邮箱</a></td>
+                            <td align="center"><a href="https://mail.google.com/" target="_blank">谷歌邮箱</a></td>
+                            <td align="center"><a href="http://email.163.com/" target="_blank">网易邮箱</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td align="center">娱乐</td>
+                            <td align="center"><a href="https://www.4399.com/" target="_blank">4399</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+
+
+                    <tbody>
+                        <tr>
+                            <td align="center">追剧</td>
+                            <td align="center"><a href="http://www.dygod.net/" target="_blank">电影天堂</a></td>
+                            <td align="center"><a href="https://movie.douban.com/chart" target="_blank">高分电影</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+
+                            <td align="center">免VIP</td>
+                            <td align="center"><a href="http://www.iyinghua.io/" target="_blank">樱花动漫</a></td>
+                            <td align="center"><a href="https://www.wedm3.com/" target="_blank">风车动漫</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
+            <div class=" column">
+                <table class="ui definition small table ">
+                    <tbody>
+                        <tr>
+                            <td align="center">1</td>
+
+                            <td align="center"><a href="#" target="_blank">待更新</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+
+
+                        </tr>
+
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td align="center">2</td>
+                            <td align="center"><a href="#" target="_blank">待更新</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td align="center">3</td>
+                            <td align="center"><a href="#" target="_blank">待更新</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td align="center">4</td>
+                            <td align="center"><a href="#" target="_blank">待更新</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td align="center">5</td>
+                            <td align="center"><a href="#" target="_blank">待更新</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td align="center">6</td>
+                            <td align="center"><a href="#" target="_blank">待更新</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td align="center">7</td>
+                            <td align="center"><a href="#" target="_blank">待更新</a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                            <td align="center"><a href="#" target="_blank"> </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class="FooterPush"></div>
+    </div>
+
+    <div class="ui footer segment  inverted vertical">
+        <div class="footer-inner">
+            <div class="copyright">
+                ©
+                <span itemprop="copyrightYear">2024 | QSZ导航</span>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <!-- 弹出二维码 -->
+    <div id="donate"><div class="ui basic small modal "> <div class="content"><div class="ui two cards"><div class=" card"> <div class="image"><img src="img/alipay.png"></div><div class="content "><div class="center aligned header ">Alipay</div> </div></div> <div class="card"><div class="image"><img src="img/wechatpay.png"></div><div class="content"><a class="center aligned header">WeChatPay</a></div></div></div></div><div class="actions"><div class="ui red basic cancel inverted button">Back</div></div></div></div>
+
+    <script src="static/js/semantic.min.js"></script>
+
+    <!--百度统计-->
     <script>
-        var startDate = new Date("2024-02-09");
-        var timeDisplay = document.getElementById("running-time");
-
-        setInterval(function () {
-            var currentDate = new Date();
-            var diff = currentDate - startDate;
-            var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            timeDisplay.textContent = "网站已运行：" + days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
-        }, 1000); // 每秒更新一次
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?08782df572e5129fbac8da8687b7b420";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
+    <!--搜索引擎-->
+    <script src="static/js/search.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#goDonate').click(function () {
+                $('.ui.modal').modal('show');
+            });
+
+        });
+        document.getElementById("donate").innerHTML =
+            "<div class=\"ui basic small modal \">" +
+            " <div class=\"content\">" +
+            "<div class=\"ui two cards\">" +
+            "<div class=\" card\"> " +
+            "<div class=\"image\">" +
+            "<img src=\"img/alipay.png\">" +
+            "</div>" +
+            "<div class=\"content \">" +
+            "<div class=\"center aligned header \">Alipay</div>" +
+            " </div>" +
+            "</div>" +
+            " <div class=\"card\">" +
+            "<div class=\"image\">" +
+            "<img src=\"img/wechatpay.png\"></div>" +
+            "<div class=\"content\"><a class=\"center aligned header\" >WeChatPay</a></div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "<div class=\"actions\">" +
+            "<div class=\"ui red basic cancel inverted button\">Back</div></div></div>";
+
+
+    </script>
+    <!--引入不蒜子计数-->
+    <script async="" src="static/js/busuanzi.pure.mini.js"></script>
+    <script type="text/javascript">
+        var OriginTitile = document.title;
+        var titleTime;
+        document.addEventListener('visibilitychange',
+            function () {
+                if (document.hidden) {
+                    document.title = 'QSZ导航';
+                    clearTimeout(titleTime);
+                } else {
+                    document.title = '欢迎使用~ ';
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitile;
+                    },
+                        2000);
+                }
+            });
+    </script>
+    <!--劝退IE-->
+    <script src="static/js/checkIE.js"></script>
+    <!-- 引入superplaceholder.js，实现input打字机效果 -->
+    <script src="static/js/superplaceholder.js"></script>
+    <script src="static/js/checkOs.js"></script>
+
+
+
+
 </body>
-</html> 
+</html>
