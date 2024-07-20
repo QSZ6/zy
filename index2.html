@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>加密网页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+text-align: center;
+}
+
+.container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+}
+
+#videos, #photos {
+margin-top: 20px;
+}
+
+#videos video, #photos img {
+max-width: 100%;
+height: auto;
+margin-top: 10px;
+}
+
+#passwordForm {
+text-align: center;
+}
+
+input[type="password"] {
+padding: 5px;
+font-size: 16px;
+}
+
+button {
+padding: 8px 16px;
+background-color: #007bff;
+color: white;
+border: none;
+cursor: pointer;
+font-size: 16px;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+
+.footer {
+position: fixed;
+bottom: 0;
+text-align: center;
+width: 100%;
+background-color: #f8f9fa;
+padding: 10px;
+}
+
+</style>
+<script>
+function checkPassword() {
+var password = document.getElementById("password").value;
+if (password === "99999") {
+document.getElementById("videos").style.display = "block";
+document.getElementById("photos").style.display = "block";
+document.getElementById("passwordForm").style.display = "none";
+} else {
+alert("密码错误，请重新输入！");
+}
+}
+
+function displayMessage() {
+alert("哈哈哈哈哈哈哈");
+}
+</script>
+</head>
+<body>
+<div class="container">
+<div id="passwordForm">
+<label for="password">请输入密码：</label>
+<input type="password" id="password">
+<button onclick="checkPassword()">确定</button>
+</div>
+
+<div id="videos" style="display: none;">
+<h2>视频区域</h2>
+<video src="D:\wz\zy\sp\1.mp4" controls></video>
+<video src="D:\wz\zy\sp\2.mp4" controls></video>
+<video src="D:\wz\zy\sp\3.mp4" controls></video>
+<video src="D:\wz\zy\sp\4.mp4" controls></video>
+
+<h2>其他</h2>
+<video src="D:\wz\zy\sp\5.mp4" controls></video>
+<video src="D:\wz\zy\sp\6.mp4" controls></video>
+</div>
+
+<div id="photos" style="display: none;">
+<h2>照片区域</h2>
+<img src="D:\wz\zy\sp\01.png">
+<img src="D:\wz\zy\sp\02.png">
+</div>
+</div>
+
+<div class="footer">
+<a href="#" onclick="displayMessage()">哈哈哈哈</a>
+</div>
+
+</body>
+</html>
